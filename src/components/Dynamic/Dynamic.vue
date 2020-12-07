@@ -1,8 +1,8 @@
 <template>
   <div id="app">
     <ul>
-      <li @click="changeMenu('dynamic')">dynamic</li>
-      <li @click="changeMenu('recursive')">recursive</li>
+      <li @click="changeMenu('one')">one</li>
+      <li @click="changeMenu('two')">two</li>
       <li @click="changeMenu('three')">three</li>
     </ul>
     <component :is="current" />
@@ -10,19 +10,21 @@
 </template>
 
 <script>
-import Dynamic from './components/Dynamic/Dynamic'
-import Recursive from './components/Recursive/Recursive'
+import One from './One';
+import Two from './Two';
+import Three from './Three';
 
 export default {
-  name: 'App',
+  name: 'Container',
   data() {
     return {
-      current: "dynamic"
+      current: "One"
     }
   },
   components: {
-    Dynamic,
-    Recursive
+    One,
+    Two,
+    Three
   },
   methods: {
     changeMenu(menu) {
